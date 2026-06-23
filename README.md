@@ -35,7 +35,7 @@
 
 附近機構查詢會請使用者分享位置，系統再用經緯度計算距離，並回傳機構名稱、地址、電話、特約服務項目，以及估算的開車與騎車時間。
 
-這裡不是用本機 JSON 直接讀資料，而是用 `axios.get()` 透過 HTTP 取得公開資料，符合這次作業要求。
+我希望這個功能看起來不是單純查資料，而是幫家屬把「哪一間比較近、能不能聯絡、提供什麼服務」整理成可以馬上判斷的資訊。
 
 ### 心智圖到系統模組
 
@@ -60,62 +60,18 @@
 - 管理者查看資料表
 - 匯出 CSV 給 Excel 開啟
 
-## 公開資料來源與作業規則
+## 線上展示
 
-這次作業要求公開資料來源要用 HTTP 請求取得，不能用 `fs.readFileSync` 或 `import json` 直接讀本機檔案。  
-因此我把「附近機構查詢」改成由 `services/institutionSearch.js` 使用 `axios.get()` 取得資料。
-
-- 預設公開資料 URL：https://raw.githubusercontent.com/SeanJ-code/my-line/main/dump/abc.json
-- 程式位置：`services/institutionSearch.js`
-- 可替換來源：Render 環境變數 `INSTITUTION_DATA_URL`
-- Webhook URL：https://my-line-s5ph.onrender.com/webhook
+- LINE Bot ID：`@690hzupc`
 - Render 服務網址：https://my-line-s5ph.onrender.com/
 
-補充說明：`data/careRecords.json` 是使用者預約後留下的紀錄，不是公開資料來源。這份檔案是為了讓專題可以展示「有記錄、可匯出、可管理」的流程。
+這個專題目前先以作品展示為主，所以我把重點放在「使用者流程完整」和「資料能被管理」兩件事上。
 
 ## 管理者怎麼看資料
 
-使用者填完預約資料後，會存到：
+使用者填完預約資料後，管理者可以在後台用表格查看預約紀錄，也可以下載成 CSV，用 Excel 整理隔天服務對象、聯絡電話、地址與預約項目。
 
-```txt
-data/careRecords.json
-```
-
-管理者可以開啟：
-
-```txt
-/admin
-```
-
-也可以下載 CSV：
-
-```txt
-/reports/care-records.csv
-```
-
-CSV 可以直接用 Excel 開啟，方便整理隔天服務對象、聯絡電話、地址與預約項目。
-
-## 本機執行方式
-
-```bash
-npm install
-npm run dev
-```
-
-本機預設網址：
-
-```txt
-http://localhost:4000
-```
-
-## 環境變數
-
-```txt
-LINE_CHANNEL_ACCESS_TOKEN=你的 LINE access token
-LINE_CHANNEL_SECRET=你的 LINE channel secret
-PORT=4000
-INSTITUTION_DATA_URL=公開資料 JSON 網址，可不填
-```
+我把這個功能留下來，是因為長照服務不只需要「有人填資料」，後面還需要有人能分配、確認和追蹤。
 
 ## 這次製作後的心得
 
