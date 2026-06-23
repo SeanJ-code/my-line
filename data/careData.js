@@ -1,21 +1,70 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const collectedDataDir = path.join(__dirname, '..', 'dump')
-
-const readCollectedJson = (fileName) =>
-  JSON.parse(fs.readFileSync(path.join(collectedDataDir, fileName), 'utf8'))
-
-const subsidyCalculatorData = readCollectedJson('gemini-code-1781251094466.json')
-const welfareStatusData = readCollectedJson('welfare_statuses.json')
-
 export const policySources = [
   {
     title: '衛福部 1966 長照服務申請及給付',
     url: 'https://1966.gov.tw/LTC/cp-6495-69915-207.html',
     checkedDate: '2026-06-12',
+  },
+]
+
+export const calculatorMeta = {
+  version: '2026_v1',
+  currency: 'TWD',
+  policy_base: '中華民國衛生福利部長期照顧服務給付及支付基準',
+}
+
+export const calculatorFormulas = {
+  total_cost: 'Σ(單項長照項目政府核定價 * 服務次數)',
+  description_1: '若總費用在政府月額度內：個案自付額 = 總費用 * 福利身份自付比率',
+  description_2:
+    '若總費用超出政府月額度：個案自付額 = (政府月額度 * 福利身份自付比率) + (總費用 - 政府月額度)',
+}
+
+export const cmsAllowances = [
+  { level: 2, label: 'CMS 第2級', allowance: 10020, note: '' },
+  { level: 3, label: 'CMS 第3級', allowance: 15460, note: '' },
+  { level: 4, label: 'CMS 第4級', allowance: 18580, note: '' },
+  { level: 5, label: 'CMS 第5級', allowance: 24100, note: '' },
+  { level: 6, label: 'CMS 第6級', allowance: 28070, note: '' },
+  { level: 7, label: 'CMS 第7級', allowance: 32290, note: '' },
+  { level: 8, label: 'CMS 第8級', allowance: 36180, note: '' },
+]
+
+export const welfareStatuses = [
+  {
+    id: 'W01',
+    category: '第一類',
+    name: '長照低收入戶',
+    subsidyRate: 1,
+    copaymentRate: 0,
+    label: '長照低收入戶：自付 0%',
+    description: '列冊低收入戶且符合長照給付資格，政府補助100%，民眾免自付。',
+  },
+  {
+    id: 'W02',
+    category: '第二類',
+    name: '長照中低收入戶',
+    subsidyRate: 0.95,
+    copaymentRate: 0.05,
+    label: '長照中低收入戶：自付 5%',
+    description: '中低收入戶且符合長照給付資格，政府補助95%，民眾自付5%。',
+  },
+  {
+    id: 'W03',
+    category: '第三類',
+    name: '長照一般戶',
+    subsidyRate: 0.84,
+    copaymentRate: 0.16,
+    label: '長照一般戶：自付 16%',
+    description: '一般身分民眾且符合長照給付資格，政府補助84%，民眾自付16%。',
+  },
+  {
+    id: 'W04',
+    category: '自費戶',
+    name: '全額自費',
+    subsidyRate: 0,
+    copaymentRate: 1,
+    label: '全額自費：自付 100%',
+    description: '未經照管中心評估、額度用畢，或不符補助資格者，需全額自行負擔。',
   },
 ]
 
@@ -75,29 +124,6 @@ export const designRecommendations = {
   ],
   skipInFirstVersion: ['線上付款', '照服員登入後台', '即時 GPS 追蹤', '完整醫療病歷管理'],
 }
-
-export const calculatorMeta = subsidyCalculatorData.calculator_meta
-
-export const calculatorFormulas = subsidyCalculatorData.formulas
-
-export const cmsAllowances = subsidyCalculatorData.cms_monthly_allowance
-  .filter((item) => Number(item.allowance) > 0)
-  .map((item) => ({
-    level: Number(item.cms_level),
-    label: `CMS 第${item.cms_level}級`,
-    allowance: Number(item.allowance),
-    note: item.note || '',
-  }))
-
-export const welfareStatuses = welfareStatusData.welfare_statuses.map((item) => ({
-  id: item.id,
-  category: item.category,
-  name: item.name,
-  subsidyRate: Number(item.government_subsidy_rate),
-  copaymentRate: Number(item.copayment_rate),
-  label: `${item.name}：自付 ${Math.round(Number(item.copayment_rate) * 100)}%`,
-  description: item.description,
-}))
 
 export const plannedMonthlyCosts = [
   { id: '6000', label: '每月 NT$6,000', amount: 6000 },

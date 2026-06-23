@@ -274,11 +274,20 @@ const createLineEventAdapter = (lineEvent) => ({
 const handleLineEvent = async (lineEvent) => {
   if (lineEvent.type === 'message' && lineEvent.message?.type === 'location') {
     console.log('收到 location：', lineEvent.message.latitude, lineEvent.message.longitude)
-    const nearbyInstitutions = findNearbyInstitutions({
-      latitude: lineEvent.message.latitude,
-      longitude: lineEvent.message.longitude,
-    })
-    await replyToLine(lineEvent.replyToken, nearbyInstitutionsMessage(nearbyInstitutions))
+    try {
+      const nearbyInstitutions = await findNearbyInstitutions({
+        latitude: lineEvent.message.latitude,
+        longitude: lineEvent.message.longitude,
+      })
+      await replyToLine(lineEvent.replyToken, nearbyInstitutionsMessage(nearbyInstitutions))
+    } catch (error) {
+      console.error('公開機構資料讀取失敗')
+      console.error(error.response?.status || error.message)
+      await replyToLine(lineEvent.replyToken, {
+        type: 'text',
+        text: '目前公開機構資料暫時讀取不到，請稍後再試一次。若你正在測試 Render，請確認 INSTITUTION_DATA_URL 可以公開存取。',
+      })
+    }
     return
   }
 

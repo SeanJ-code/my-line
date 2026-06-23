@@ -1,11 +1,21 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+import axios from 'axios'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const institutionsPath = path.join(__dirname, '..', 'dump', 'abc.json')
+const cleanEnv = (value) =>
+  String(value || '')
+    .trim()
+    .replace(/^["']|["']$/g, '')
 
-const rawInstitutions = JSON.parse(fs.readFileSync(institutionsPath, 'utf8'))
+const defaultInstitutionDataUrl =
+  'https://raw.githubusercontent.com/SeanJ-code/my-line/main/dump/abc.json'
+
+const institutionDataUrl = cleanEnv(process.env.INSTITUTION_DATA_URL) || defaultInstitutionDataUrl
+
+export const institutionDataSource = {
+  title: '長照機構公開資料',
+  url: institutionDataUrl,
+}
+
+let institutionsCache = null
 
 const cityNames = [
   '臺北市',
@@ -136,32 +146,70 @@ const normalizeInstitution = (item, index) => {
   }
 }
 
-const institutionsByKey = rawInstitutions
-  .map(normalizeInstitution)
-  .filter((item) => item.longitude !== null && item.latitude !== null)
-  .reduce((groups, institution) => {
-    const key = `${institution.id}-${institution.name}-${institution.address}`
-    const existingInstitution = groups.get(key)
+const parseRemoteDataset = (data) => {
+  if (Array.isArray(data)) {
+    return data
+  }
 
-    if (!existingInstitution) {
-      groups.set(key, institution)
+  if (Array.isArray(data?.records)) {
+    return data.records
+  }
+
+  if (Array.isArray(data?.result?.records)) {
+    return data.result.records
+  }
+
+  if (Array.isArray(data?.data)) {
+    return data.data
+  }
+
+  return []
+}
+
+const loadRawInstitutions = async () => {
+  const response = await axios.get(institutionDataUrl, {
+    timeout: 20000,
+    responseType: 'json',
+  })
+
+  return parseRemoteDataset(response.data)
+}
+
+const loadInstitutions = async () => {
+  if (institutionsCache) {
+    return institutionsCache
+  }
+
+  const rawInstitutions = await loadRawInstitutions()
+  const institutionsByKey = rawInstitutions
+    .map(normalizeInstitution)
+    .filter((item) => item.longitude !== null && item.latitude !== null)
+    .reduce((groups, institution) => {
+      const key = `${institution.id}-${institution.name}-${institution.address}`
+      const existingInstitution = groups.get(key)
+
+      if (!existingInstitution) {
+        groups.set(key, institution)
+        return groups
+      }
+
+      const serviceItems = new Set(
+        `${existingInstitution.serviceItems}、${institution.serviceItems}`
+          .split(/[、;,；]/)
+          .map((item) => item.trim())
+          .filter(Boolean),
+      )
+      existingInstitution.serviceItems = [...serviceItems].join('、')
+
       return groups
-    }
+    }, new Map())
 
-    const serviceItems = new Set(
-      `${existingInstitution.serviceItems}、${institution.serviceItems}`
-        .split(/[、;,；]/)
-        .map((item) => item.trim())
-        .filter(Boolean),
-    )
-    existingInstitution.serviceItems = [...serviceItems].join('、')
+  institutionsCache = [...institutionsByKey.values()]
 
-    return groups
-  }, new Map())
+  return institutionsCache
+}
 
-const institutions = [...institutionsByKey.values()]
-
-export const findNearbyInstitutions = ({ latitude, longitude }, limit = 5) => {
+export const findNearbyInstitutions = async ({ latitude, longitude }, limit = 5) => {
   const userLocation = {
     latitude: toNumber(latitude),
     longitude: toNumber(longitude),
@@ -170,6 +218,8 @@ export const findNearbyInstitutions = ({ latitude, longitude }, limit = 5) => {
   if (userLocation.latitude === null || userLocation.longitude === null) {
     return []
   }
+
+  const institutions = await loadInstitutions()
 
   return institutions
     .map((institution) => {

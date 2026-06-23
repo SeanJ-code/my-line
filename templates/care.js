@@ -988,7 +988,7 @@ export const welfareInfoMessage = () => ({
           weight: 'bold',
           size: 'lg',
         }),
-        text('資料來源：dump/welfare_statuses.json', {
+        text('資料來源：衛福部長照給付及支付基準整理', {
           color: '#D9F4F2',
           size: 'xs',
           margin: 'xs',
