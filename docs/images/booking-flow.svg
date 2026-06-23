@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">LINE Bot 預約服務操作流程</title>
+  <desc id="desc">使用者從選擇照顧項目、固定班表、填寫資料到預約確認的四步驟示意圖。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F0F9FF"/>
+      <stop offset="1" stop-color="#ECFDF5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#0F172A" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <text x="76" y="84" fill="#0F172A" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="38" font-weight="700">預約照顧服務：先選服務，再留下資料</text>
+  <text x="78" y="122" fill="#475569" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="20">設計時我把流程拆成家屬比較容易理解的四段，不一開始就要求填表，降低壓力。</text>
+  <g transform="translate(70 170)">
+    <g filter="url(#shadow)">
+      <rect x="0" y="0" width="245" height="430" rx="28" fill="#FFFFFF"/>
+      <rect x="22" y="24" width="201" height="52" rx="18" fill="#DFF7EF"/>
+      <text x="44" y="58" fill="#065F46" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="20" font-weight="700">1. 選擇照顧</text>
+      <rect x="22" y="102" width="201" height="94" rx="18" fill="#F0F9FF"/>
+      <text x="42" y="136" fill="#0369A1" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="18" font-weight="700">BA01 基本身體清潔</text>
+      <text x="42" y="166" fill="#475569" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="15">洗澡、擦澡、更衣</text>
+      <rect x="42" y="218" width="161" height="44" rx="22" fill="#16A34A"/>
+      <text x="76" y="247" fill="#FFFFFF" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="16" font-weight="700">選這項服務</text>
+      <text x="40" y="320" fill="#64748B" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="15">使用者送出：</text>
+      <rect x="40" y="340" width="164" height="42" rx="20" fill="#B7F7C5"/>
+      <text x="64" y="367" fill="#14532D" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="16">基本身體清潔</text>
+    </g>
+    <g transform="translate(285 0)" filter="url(#shadow)">
+      <rect x="0" y="0" width="245" height="430" rx="28" fill="#FFFFFF"/>
+      <rect x="22" y="24" width="201" height="52" rx="18" fill="#E0F2FE"/>
+      <text x="44" y="58" fill="#075985" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="20" font-weight="700">2. 固定班表</text>
+      <rect x="25" y="108" width="195" height="54" rx="15" fill="#F8FAFC"/>
+      <text x="48" y="142" fill="#334155" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="17">每週 3 次</text>
+      <rect x="25" y="178" width="195" height="54" rx="15" fill="#F8FAFC"/>
+      <text x="48" y="212" fill="#334155" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="17">上午 09:00</text>
+      <rect x="25" y="248" width="195" height="54" rx="15" fill="#F8FAFC"/>
+      <text x="48" y="282" fill="#334155" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="17">每次 60 分鐘</text>
+      <rect x="43" y="336" width="160" height="44" rx="22" fill="#0369A1"/>
+      <text x="77" y="365" fill="#FFFFFF" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="16" font-weight="700">確認班表</text>
+    </g>
+    <g transform="translate(570 0)" filter="url(#shadow)">
+      <rect x="0" y="0" width="245" height="430" rx="28" fill="#FFFFFF"/>
+      <rect x="22" y="24" width="201" height="52" rx="18" fill="#FEF3C7"/>
+      <text x="44" y="58" fill="#92400E" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="20" font-weight="700">3. 聯絡資料</text>
+      <text x="32" y="112" fill="#475569" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="15">依序詢問，不一次丟整張表：</text>
+      <rect x="30" y="138" width="185" height="40" rx="12" fill="#F8FAFC"/>
+      <text x="48" y="164" fill="#334155" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="16">姓名</text>
+      <rect x="30" y="190" width="185" height="40" rx="12" fill="#F8FAFC"/>
+      <text x="48" y="216" fill="#334155" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="16">電話</text>
+      <rect x="30" y="242" width="185" height="40" rx="12" fill="#F8FAFC"/>
+      <text x="48" y="268" fill="#334155" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="16">地址</text>
+      <rect x="30" y="294" width="185" height="40" rx="12" fill="#F8FAFC"/>
+      <text x="48" y="320" fill="#334155" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="16">被服務者關係</text>
+      <rect x="43" y="360" width="160" height="44" rx="22" fill="#D97706"/>
+      <text x="68" y="389" fill="#FFFFFF" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="16" font-weight="700">送出資料</text>
+    </g>
+    <g transform="translate(855 0)" filter="url(#shadow)">
+      <rect x="0" y="0" width="245" height="430" rx="28" fill="#FFFFFF"/>
+      <rect x="22" y="24" width="201" height="52" rx="18" fill="#DCFCE7"/>
+      <text x="44" y="58" fill="#166534" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="20" font-weight="700">4. 預約確認</text>
+      <rect x="26" y="108" width="193" height="210" rx="18" fill="#F8FAFC"/>
+      <text x="47" y="145" fill="#0F172A" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="18" font-weight="700">預約資料確認</text>
+      <text x="47" y="184" fill="#475569" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="15">服務：基本身體清潔</text>
+      <text x="47" y="216" fill="#475569" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="15">班表：每週 3 次</text>
+      <text x="47" y="248" fill="#475569" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="15">資料：已存入 JSON</text>
+      <rect x="42" y="340" width="74" height="42" rx="21" fill="#16A34A"/>
+      <text x="58" y="367" fill="#FFFFFF" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="15" font-weight="700">確認</text>
+      <rect x="128" y="340" width="74" height="42" rx="21" fill="#E2E8F0"/>
+      <text x="144" y="367" fill="#334155" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="15" font-weight="700">修改</text>
+    </g>
+  </g>
+</svg>

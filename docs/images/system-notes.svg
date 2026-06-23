@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">長照 LINE Bot 系統製作整理</title>
+  <desc id="desc">依照心智圖拆成使用者、政府補助、私立自費、貼近家屬小提醒四個模組。</desc>
+  <rect width="1200" height="620" fill="#F8FAFC"/>
+  <text x="78" y="80" fill="#0F172A" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="38" font-weight="700">我把心智圖整理成四個可以展示的模組</text>
+  <text x="80" y="120" fill="#475569" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="20">不是把資料全部塞進 LINE，而是讓家屬先完成最常見的決策：知道資格、選服務、留資料、能被追蹤。</text>
+  <g transform="translate(80 180)" font-family="Arial, 'Noto Sans TC', sans-serif">
+    <rect x="0" y="0" width="500" height="150" rx="26" fill="#ECFDF5" stroke="#BBF7D0"/>
+    <text x="32" y="48" fill="#166534" font-size="24" font-weight="700">1. 歡迎首頁與分流</text>
+    <text x="32" y="88" fill="#334155" font-size="17">用「第一次使用，先這樣開始」帶家屬進入功能，不讓首頁變成按鈕倉庫。</text>
+    <text x="32" y="120" fill="#475569" font-size="16">入口：預約照顧、補助試算、附近機構、常見問題。</text>
+    <rect x="620" y="0" width="500" height="150" rx="26" fill="#F0F9FF" stroke="#BAE6FD"/>
+    <text x="652" y="48" fill="#075985" font-size="24" font-weight="700">2. 公費長照服務模組</text>
+    <text x="652" y="88" fill="#334155" font-size="17">BA01-BA24 保留完整項目，但用卡片分段呈現，避免一次看太多。</text>
+    <text x="652" y="120" fill="#475569" font-size="16">邏輯：先選照顧項目，再排班表，最後填資料。</text>
+    <rect x="0" y="200" width="500" height="150" rx="26" fill="#FFF7ED" stroke="#FED7AA"/>
+    <text x="32" y="248" fill="#9A3412" font-size="24" font-weight="700">3. 私立自費服務模組</text>
+    <text x="32" y="288" fill="#334155" font-size="17">讓沒有 CMS 等級、等待核定或想補足服務時數的人，也有可理解的選擇。</text>
+    <text x="32" y="320" fill="#475569" font-size="16">內容：服務項目、鐘點估價、回電確認。</text>
+    <rect x="620" y="200" width="500" height="150" rx="26" fill="#FEF2F2" stroke="#FECACA"/>
+    <text x="652" y="248" fill="#991B1B" font-size="24" font-weight="700">4. 有記錄的管理流程</text>
+    <text x="652" y="288" fill="#334155" font-size="17">預約、取消、聯絡資料會存成 JSON，管理者可用表格或 CSV 查看。</text>
+    <text x="652" y="320" fill="#475569" font-size="16">目標：不是只會聊天，而是可以留下可作業的資料。</text>
+  </g>
+</svg>

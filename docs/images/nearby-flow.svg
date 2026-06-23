@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">附近長照機構查詢流程</title>
+  <desc id="desc">LINE 使用者分享位置後，系統用 axios 取得公開資料並回傳附近機構卡片。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFF7ED"/>
+      <stop offset="1" stop-color="#F0F9FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="650" fill="url(#bg)"/>
+  <text x="76" y="78" fill="#0F172A" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="38" font-weight="700">找附近機構：讓位置變成可以行動的選擇</text>
+  <text x="78" y="116" fill="#475569" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="20">這個功能的重點不是丟一堆資料，而是把距離、電話、服務項目整理成家屬看得懂的卡片。</text>
+  <g transform="translate(80 168)">
+    <g filter="url(#shadow)">
+      <rect x="0" y="0" width="285" height="380" rx="30" fill="#FFFFFF"/>
+      <rect x="28" y="30" width="229" height="60" rx="20" fill="#DCFCE7"/>
+      <text x="55" y="68" fill="#166534" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="21" font-weight="700">LINE 內分享位置</text>
+      <circle cx="142" cy="172" r="58" fill="#BBF7D0"/>
+      <path d="M142 104 C116 104 94 126 94 153 C94 196 142 242 142 242 C142 242 190 196 190 153 C190 126 168 104 142 104 Z" fill="#16A34A"/>
+      <circle cx="142" cy="153" r="19" fill="#FFFFFF"/>
+      <text x="50" y="295" fill="#475569" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="17">使用者不用打地址，直接用手機定位。</text>
+    </g>
+    <g transform="translate(410 0)" filter="url(#shadow)">
+      <rect x="0" y="0" width="285" height="380" rx="30" fill="#FFFFFF"/>
+      <rect x="28" y="30" width="229" height="60" rx="20" fill="#E0F2FE"/>
+      <text x="54" y="68" fill="#075985" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="21" font-weight="700">axios 讀公開資料</text>
+      <rect x="42" y="122" width="201" height="54" rx="14" fill="#F8FAFC"/>
+      <text x="63" y="156" fill="#334155" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="17">機構名稱</text>
+      <rect x="42" y="190" width="201" height="54" rx="14" fill="#F8FAFC"/>
+      <text x="63" y="224" fill="#334155" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="17">地址與 XY 座標</text>
+      <rect x="42" y="258" width="201" height="54" rx="14" fill="#F8FAFC"/>
+      <text x="63" y="292" fill="#334155" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="17">電話與特約項目</text>
+    </g>
+    <g transform="translate(820 0)" filter="url(#shadow)">
+      <rect x="0" y="0" width="285" height="380" rx="30" fill="#FFFFFF"/>
+      <rect x="28" y="30" width="229" height="60" rx="20" fill="#FEF3C7"/>
+      <text x="59" y="68" fill="#92400E" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="21" font-weight="700">回傳附近機構</text>
+      <rect x="36" y="118" width="213" height="178" rx="18" fill="#F8FAFC"/>
+      <text x="58" y="154" fill="#0F172A" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="18" font-weight="700">長照服務機構</text>
+      <text x="58" y="190" fill="#475569" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="15">距離：約 0.8 km</text>
+      <text x="58" y="222" fill="#475569" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="15">開車：約 6 分鐘</text>
+      <text x="58" y="254" fill="#475569" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="15">騎車：約 7 分鐘</text>
+      <rect x="58" y="322" width="168" height="42" rx="21" fill="#0369A1"/>
+      <text x="88" y="349" fill="#FFFFFF" font-family="Arial, 'Noto Sans TC', sans-serif" font-size="16" font-weight="700">查看聯絡資訊</text>
+    </g>
+    <path d="M312 190 H380" stroke="#94A3B8" stroke-width="5" stroke-linecap="round"/>
+    <path d="M374 174 L392 190 L374 206" fill="none" stroke="#94A3B8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M722 190 H790" stroke="#94A3B8" stroke-width="5" stroke-linecap="round"/>
+    <path d="M784 174 L802 190 L784 206" fill="none" stroke="#94A3B8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
