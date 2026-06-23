@@ -50,6 +50,11 @@ const contentTypes = {
   '.jpeg': 'image/jpeg',
 }
 
+const cleanEnv = (value) =>
+  String(value || '')
+    .trim()
+    .replace(/^["']|["']$/g, '')
+
 const readRawBody = (req) =>
   new Promise((resolve, reject) => {
     const chunks = []
@@ -220,14 +225,13 @@ const verifyLineSignature = (rawBody, signature) => {
     return true
   }
 
-  if (!signature || !process.env.CHANNEL_SECRET) {
+  const channelSecret = cleanEnv(process.env.CHANNEL_SECRET)
+
+  if (!signature || !channelSecret) {
     return false
   }
 
-  const hash = crypto
-    .createHmac('sha256', process.env.CHANNEL_SECRET)
-    .update(rawBody)
-    .digest('base64')
+  const hash = crypto.createHmac('sha256', channelSecret).update(rawBody).digest('base64')
 
   if (hash.length !== signature.length) {
     return false
@@ -238,6 +242,7 @@ const verifyLineSignature = (rawBody, signature) => {
 
 const replyToLine = async (replyToken, messages) => {
   const normalizedMessages = Array.isArray(messages) ? messages : [messages]
+  const channelAccessToken = cleanEnv(process.env.CHANNEL_ACCESS_TOKEN)
 
   try {
     await axios.post(
@@ -248,7 +253,7 @@ const replyToLine = async (replyToken, messages) => {
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.CHANNEL_ACCESS_TOKEN}`,
+          Authorization: `Bearer ${channelAccessToken}`,
           'Content-Type': 'application/json',
         },
       },
