@@ -1,0 +1,17 @@
+{
+  "form_id": "booking_service_schema",
+  "title": "長照服務預約表單欄位規範",
+  "required_fields": [
+    { "field_id": "care_receiver_name", "label": "被照顧者姓名", "type": "string", "placeholder": "請輸入長輩或個案姓名" },
+    { "field_id": "care_receiver_id", "label": "被照顧者身分證字號", "type": "string", "placeholder": "主要用於查詢政府補助核定額度", "validation": "^[A-Z][12]\\d{8}$" },
+    { "field_id": "care_receiver_birthday", "label": "被照顧者出生日期", "type": "date", "placeholder": "YYYY-MM-DD" },
+    { "field_id": "cms_level", "label": "失能等級 (CMS)", "type": "select", "options": ["尚未評估", "第2級", "第3級", "第4級", "第5級", "第6級", "第7級", "第8級"] },
+    { "field_id": "welfare_status", "label": "福利身分類別", "type": "select", "options": ["長照一般戶 (自付16%)", "長照中低收入戶 (自付5%)", "長照低收入戶 (自付0%)", "全額自費"] },
+    { "field_id": "service_address", "label": "服務對象居住地址", "type": "string", "placeholder": "請輸入實際接受照顧服務的地址" },
+    { "field_id": "contact_name", "label": "主要家屬/聯絡人姓名", "type": "string" },
+    { "field_id": "contact_phone", "label": "聯絡人電話", "type": "string", "validation": "^09\\d{8}$" },
+    { "field_id": "relationship", "label": "與被照顧者關係", "type": "select", "options": ["配偶", "子女", "媳婿", "孫子女", "手足", "其他親屬", "朋友/監護人"] },
+    { "field_id": "preferred_services", "label": "期望服務項目", "type": "checkbox", "options": ["身體照顧服務 (BA)", "日常生活照顧 (BB)", "餐食照顧 (BA)", "家務服務 (BB)", "陪同就醫 (BB)", "喘息服務 (G)"] },
+    { "field_id": "special_notes", "label": "特殊狀況備註", "type": "text", "placeholder": "例如：患有失智症、管路留置、需輪椅代步等..." }
+  ]
+}

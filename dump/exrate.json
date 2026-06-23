@@ -1,0 +1,108 @@
+{
+  "type": "flex",
+  "altText": "匯率查詢結果",
+  "contents": {
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble",
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "USD",
+              "weight": "bold",
+              "color": "#1DB446",
+              "size": "sm"
+            },
+            {
+              "type": "text",
+              "text": 31.588,
+              "weight": "bold",
+              "size": "xxl"
+            },
+            {
+              "type": "text",
+              "text": "2026/5/21 上午11:00:00",
+              "size": "xs",
+              "color": "#aaaaaa"
+            }
+          ]
+        },
+        "styles": {
+          "footer": {
+            "separator": true
+          }
+        }
+      },
+      {
+        "type": "bubble",
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "JPY",
+              "weight": "bold",
+              "color": "#1DB446",
+              "size": "sm"
+            },
+            {
+              "type": "text",
+              "text": 0.19869665861513688,
+              "weight": "bold",
+              "size": "xxl"
+            },
+            {
+              "type": "text",
+              "text": "2026/5/21 上午11:00:00",
+              "size": "xs",
+              "color": "#aaaaaa"
+            }
+          ]
+        },
+        "styles": {
+          "footer": {
+            "separator": true
+          }
+        }
+      },
+      {
+        "type": "bubble",
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "CNY",
+              "weight": "bold",
+              "color": "#1DB446",
+              "size": "sm"
+            },
+            {
+              "type": "text",
+              "text": 4.645294117647059,
+              "weight": "bold",
+              "size": "xxl"
+            },
+            {
+              "type": "text",
+              "text": "2026/5/21 上午11:09:33",
+              "size": "xs",
+              "color": "#aaaaaa"
+            }
+          ]
+        },
+        "styles": {
+          "footer": {
+            "separator": true
+          }
+        }
+      }
+    ]
+  }
+}

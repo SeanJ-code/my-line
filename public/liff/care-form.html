@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>安心照護資料表單</title>
+    <link rel="stylesheet" href="/liff/care-form.css" />
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script type="module" src="/liff/care-form.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">安心照護小幫手</p>
+          <h1>把家屬需求整理成一份清楚報表</h1>
+          <p class="hero-copy">填寫後會整合到後台資料，管理者可匯出 Excel 可開啟的 CSV 報表。</p>
+        </div>
+      </section>
+
+      <section class="status-card" id="userStatus">正在準備表單...</section>
+
+      <form class="form-card" id="careForm">
+        <div class="section-heading">
+          <span>1</span>
+          <h2>被照顧者資料</h2>
+        </div>
+        <label>
+          被照顧者姓名
+          <input name="receiverName" required placeholder="例如：王阿嬤" />
+        </label>
+        <label>
+          出生日期
+          <input name="birthday" type="date" />
+        </label>
+        <label>
+          CMS 等級
+          <select name="cmsLevel" required>
+            <option value="">請選擇</option>
+            <option value="尚未評估">尚未評估</option>
+            <option value="2">CMS 第2級</option>
+            <option value="3">CMS 第3級</option>
+            <option value="4">CMS 第4級</option>
+            <option value="5">CMS 第5級</option>
+            <option value="6">CMS 第6級</option>
+            <option value="7">CMS 第7級</option>
+            <option value="8">CMS 第8級</option>
+          </select>
+        </label>
+        <label>
+          福利身分
+          <select name="welfareStatus" required>
+            <option value="">請選擇</option>
+            <option value="低收入戶">低收入戶：自付 0%</option>
+            <option value="中低收入戶">中低收入戶：自付 5%</option>
+            <option value="一般戶">一般戶：自付 16%</option>
+            <option value="自費">自費或尚未核定</option>
+          </select>
+        </label>
+
+        <div class="section-heading">
+          <span>2</span>
+          <h2>服務需求</h2>
+        </div>
+        <label>
+          主要服務項目
+          <select name="serviceType" required>
+            <option value="">請選擇</option>
+            <option value="BA01 基本身體清潔">BA01 基本身體清潔</option>
+            <option value="BA02 基本日常照顧">BA02 基本日常照顧</option>
+            <option value="BA05 餐食照顧">BA05 餐食照顧</option>
+            <option value="BA12 陪同就醫">BA12 陪同就醫</option>
+            <option value="BA13 家務服務">BA13 家務服務</option>
+            <option value="BA16 陪伴服務">BA16 陪伴服務</option>
+          </select>
+        </label>
+        <label>
+          服務頻率
+          <select name="frequency" required>
+            <option value="">請選擇</option>
+            <option value="每週1次">每週1次</option>
+            <option value="每週2次">每週2次</option>
+            <option value="每週3次">每週3次</option>
+            <option value="每週5次">每週5次</option>
+            <option value="每天固定">每天固定</option>
+          </select>
+        </label>
+        <label>
+          希望時段
+          <select name="timeSlot" required>
+            <option value="">請選擇</option>
+            <option value="上午 08:00-12:00">上午 08:00-12:00</option>
+            <option value="下午 13:30-17:30">下午 13:30-17:30</option>
+            <option value="傍晚 18:00-21:00">傍晚 18:00-21:00</option>
+          </select>
+        </label>
+        <label>
+          服務地址
+          <input name="address" required placeholder="請填實際服務地址" />
+        </label>
+
+        <div class="section-heading">
+          <span>3</span>
+          <h2>聯絡與備註</h2>
+        </div>
+        <label>
+          主要聯絡人
+          <input name="contactName" required placeholder="例如：王小明" />
+        </label>
+        <label>
+          與被服務者關係
+          <select name="relationship" required>
+            <option value="">請選擇</option>
+            <option value="子女">子女</option>
+            <option value="配偶">配偶</option>
+            <option value="孫子女">孫子女</option>
+            <option value="其他親屬">其他親屬</option>
+            <option value="朋友/照顧者">朋友/照顧者</option>
+          </select>
+        </label>
+        <label>
+          聯絡電話
+          <input name="contactPhone" required inputmode="tel" placeholder="例如：0912345678" />
+        </label>
+        <label>
+          特殊注意事項
+          <textarea name="notes" rows="4" placeholder="例如：跌倒風險、失智、寵物、門禁、指定送醫醫院"></textarea>
+        </label>
+
+        <button class="submit-button" type="submit">送出並建立報表資料</button>
+        <p class="form-message" id="formMessage"></p>
+      </form>
+    </main>
+  </body>
+</html>

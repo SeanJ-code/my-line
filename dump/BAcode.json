@@ -1,0 +1,170 @@
+[
+  {
+    "code": "BA01",
+    "name": "基本身體清潔",
+    "summary": "包含床上或浴室洗頭、洗澡、擦澡、更衣、口腔清潔等。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA02",
+    "name": "基本日常照顧",
+    "summary": "協助翻身、拍背、肢體關節活動、上下床、梳洗等。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA03",
+    "name": "測量生命徵象",
+    "summary": "定時測量血壓、血糖、體溫、脈搏或呼吸。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA04",
+    "name": "協助進食或管灌餵食",
+    "summary": "協助餵食、準備管灌食物、灌食及灌食後清理。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA05",
+    "name": "餐食照顧",
+    "summary": "包含備餐（煮飯/菜）、餵食或協助進食、餐具洗滌。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA06",
+    "name": "協助沐浴及洗頭",
+    "summary": "於浴室協助個案全身沐浴（含洗頭）與吹乾頭髮。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA07",
+    "name": "足部照護",
+    "summary": "針對一般老人或糖尿病個案的足部清潔、修剪趾甲與檢查。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA08",
+    "name": "翻身拍背",
+    "summary": "每隔固定時間協助個案翻身、調整臥位與拍背。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA09",
+    "name": "肢體關節活動",
+    "summary": "協助個案進行被動或主動的肢體關節運動（非專業復能）。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA10",
+    "name": "協助上樓梯下樓梯",
+    "summary": "協助個案安全上下樓梯（無電梯環境）。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA11",
+    "name": "陪同外出",
+    "summary": "陪同散步、購物、訪友、參與社區活動等。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA12",
+    "name": "陪同就醫",
+    "summary": "陪同至醫院看診、取藥、辦理掛號或住院手續。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA13",
+    "name": "家務服務",
+    "summary": "針對個案主要生活範圍的清理、洗滌衣物、垃圾清運。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA14",
+    "name": "代購或代領郵件物品",
+    "summary": "代為購買生活必需品、藥品、代繳費用或領取郵件。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA15",
+    "name": "安全看視",
+    "summary": "針對失智症或具特殊行為個案，提供在場看視與陪伴。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA16",
+    "name": "陪伴服務",
+    "summary": "聊天、讀報、給予情緒支持、維持個案日常作息。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA17",
+    "name": "巡迴服務",
+    "summary": "定時或定點巡視，確認個案安全與突發狀況處理。",
+    "category": "physical",
+    "category_name": "身體照顧服務"
+  },
+  {
+    "code": "BA18",
+    "name": "依指示抽吸(抽痰)",
+    "summary": "依醫囑或護理人員指示，操作抽吸器協助清除呼吸道分泌物。",
+    "category": "special",
+    "category_name": "特殊照顧與額外加計項目"
+  },
+  {
+    "code": "BA19",
+    "name": "施打胰島素",
+    "summary": "依醫囑協助糖尿病個案皮下注射胰島素。",
+    "category": "special",
+    "category_name": "特殊照顧與額外加計項目"
+  },
+  {
+    "code": "BA20",
+    "name": "甘油球通便",
+    "summary": "協助個案使用甘油球進行通便照護。",
+    "category": "special",
+    "category_name": "特殊照顧與額外加計項目"
+  },
+  {
+    "code": "BA21",
+    "name": "照顧服務綜合加計",
+    "summary": "針對照顧難度較高（如體重過重、具攻擊行為）之個案加計。",
+    "category": "special",
+    "category_name": "特殊照顧與額外加計項目"
+  },
+  {
+    "code": "BA22",
+    "name": "假日照顧加計",
+    "summary": "照顧服務員於國定假日、例假日提供服務時之加計費用。",
+    "category": "special",
+    "category_name": "特殊照顧與額外加計項目"
+  },
+  {
+    "code": "BA23",
+    "name": "夜間照顧加計",
+    "summary": "於夜間指定時段（通常為 22:00 至翌日 06:00）提供服務之加計。",
+    "category": "special",
+    "category_name": "特殊照顧與額外加計項目"
+  },
+  {
+    "code": "BA24",
+    "name": "偏遠地區加計",
+    "summary": "服務地點位於政府認定的偏遠地區、原鄉時之加計費用。",
+    "category": "special",
+    "category_name": "特殊照顧與額外加計項目"
+  }
+]

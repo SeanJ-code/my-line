@@ -1,0 +1,36 @@
+{
+  "welfare_statuses": [
+    {
+      "id": "W01",
+      "category": "第一類",
+      "name": "長照低收入戶",
+      "government_subsidy_rate": 1.0,
+      "copayment_rate": 0.0,
+      "description": "列冊低收入戶、中低收入戶（未達最低生活費1.5倍且未接受安置），政府補助100%，民眾免自付。"
+    },
+    {
+      "id": "W02",
+      "category": "第二類",
+      "name": "長照中低收入戶",
+      "government_subsidy_rate": 0.95,
+      "copayment_rate": 0.05,
+      "description": "中低收入戶（最低生活費1.5倍至2.5倍之間且未接受安置），政府補助95%，民眾自付5%。"
+    },
+    {
+      "id": "W03",
+      "category": "第三類",
+      "name": "長照一般戶",
+      "government_subsidy_rate": 0.84,
+      "copayment_rate": 0.16,
+      "description": "一般身分民眾，政府補助84%，民眾自付16%。"
+    },
+    {
+      "id": "W04",
+      "category": "自費戶",
+      "name": "全額自費",
+      "government_subsidy_rate": 0.0,
+      "copayment_rate": 1.0,
+      "description": "未經照顧管理中心評估、額度用畢，或不符補助資格者，需全額自行負擔（100%）。"
+    }
+  ]
+}

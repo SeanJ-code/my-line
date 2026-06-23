@@ -1,0 +1,28 @@
+{
+  "calculator_meta": {
+    "version": "2026_v1",
+    "currency": "TWD",
+    "policy_base": "中華民國衛生福利部長期照顧服務給付及支付基準"
+  },
+  "formulas": {
+    "total_cost": "Σ(單項長照項目政府核定價 * 服務次數)",
+    "description_1": "若『總費用』在『政府月額度內』：個案自付額 = 總費用 * 福利身份自付比率",
+    "description_2": "若『總費用』超出『政府月額度』：個案自付額 = (政府月額度 * 福利身份自付比率) + (總費用 - 政府月額度)"
+  },
+  "cms_monthly_allowance": [
+    { "cms_level": 1, "allowance": 0, "note": "不符長照2.0給付資格" },
+    { "cms_level": 2, "allowance": 10020 },
+    { "cms_level": 3, "allowance": 15460 },
+    { "cms_level": 4, "allowance": 18580 },
+    { "cms_level": 5, "allowance": 24100 },
+    { "cms_level": 6, "allowance": 28070 },
+    { "cms_level": 7, "allowance": 32290 },
+    { "cms_level": 8, "allowance": 36180 }
+  ],
+  "copayment_rates": {
+    "W01_low_income": { "label": "長照低收入戶", "rate": 0.00, "government_share": 1.00 },
+    "W02_mid_income": { "label": "長照中低收入戶", "rate": 0.05, "government_share": 0.95 },
+    "W03_general": { "label": "長照一般戶", "rate": 0.16, "government_share": 0.84 },
+    "W04_self_pay": { "label": "全額自費/超過額度部分", "rate": 1.00, "government_share": 0.00 }
+  }
+}

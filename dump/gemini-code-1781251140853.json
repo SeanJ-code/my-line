@@ -1,0 +1,13 @@
+{
+  "template_title": "機構強烈建議預留的『緊急聯絡資訊』欄位架構",
+  "public_emergency_services": [
+    { "name": "緊急救護/火警", "phone": "119", "note": "若長輩發生急性休克、嚴重跌倒等立即危及生命狀況使用。" }
+  ],
+  "agency_internal_contacts": [
+    { "name": "機構督導/個管師專線", "phone": "02-xxxx-xxxx", "note": "服務現場發生突發狀況時回報。" }
+  ],
+  "user_dynamic_fields_to_collect": [
+    { "field_key": "emergency_contact_1_phone", "label": "第一緊急聯絡人行動電話", "importance": "必填，需24小時可聯絡" },
+    { "field_key": "preferred_hospital", "label": "指定送往醫院", "importance": "非常重要！家屬須先註明長輩平時就診、有完整病歷的醫院，避免救護車送錯。" }
+  ]
+}
